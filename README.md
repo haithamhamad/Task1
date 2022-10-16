@@ -28,6 +28,9 @@ vgcreate -s 16M vg03 /dev/sdb1
 ```
 lvcreate -L 800M -n lv vg03
 ```
+![vg and lv](/create vg and LV.png)
+
+
 #### make a file system and mount it:
 ```
 mkfs -t ext4 /dev/vg03/lv
