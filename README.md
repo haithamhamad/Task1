@@ -50,4 +50,9 @@ vi /ets/fstab
 ### final result
 ![res](https://github.com/haithamhamad/Task1/blob/8211452cb273cf38066759d8c178af476a30a702/result%20lvm.png)
 
-## Question 2:
+## Question 2: users, groups and permission
+>Add user: user1, set uid=601 Password: redhat. The user's login shell should be
+non-interactive. (no ssh access to server)
+2- Add user1 to group TrainingGroup.
+3- Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin
+group Password: redhat, user 3 with root permissions
