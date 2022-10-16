@@ -79,6 +79,7 @@ useradd -p redhat -G Admin,TrainingGroup user3
 ```
 visudo
 ```
->user3 ALL=(ALL) ALL (add this line)
+>user3 ALL=(ALL) ALL
+
 ![u3 permission](https://github.com/haithamhamad/Task1/blob/86c76d321cd39fe5652bc8cf94be719118544d8c/user3%20permission.png)
 
