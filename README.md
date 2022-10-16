@@ -95,3 +95,46 @@ visudo
 ```
 ssh-copy-id -i id_rsa.pub (root@whatever is the other machine)
 ```
+## Question 4: permissions
+>Copy /etc/fstab to /var/tmp name admin, the user1 could read, write and modify it, while user2 can’t do
+any permission
+#### copy the file:
+```
+cp /etc/fstab /var/tmp/admin
+```
+#### change owner to user1:
+```
+chown user1 /var/tmp/admin
+```
+#### change permissions:
+```
+chmod 700 /var/tmp/admin
+```
+## Question 5: SELinux
+>SELinux must be running in the Enforcing mode (permanent even after reboot)
+```
+vi /etc/selinux/config
+```
+>SELINUX=enforcing
+
+## Question 8: Network management
+>1- Open port 443 , 80
+>2- Make the changes permanent
+>3- Block ssh connection for your colleague ip to the VM.
+
+#### open ports :
+```
+firewall-cmd --add-port={443/tcp,80/tcp} --permanent
+```
+#### deny an IP:
+```
+vi /etc/hosts.deny
+```
+>sshd : IP(ex : 192.168.2.5)
+
+## Question 9: cronjob
+
+
+
+
+
