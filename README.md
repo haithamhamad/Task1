@@ -54,3 +54,26 @@ vi /ets/fstab
 >1. Add user: user1, set uid=601 Password: redhat. The user's login shell should be non-interactive. (no ssh access to server)
 >2. Add user1 to group TrainingGroup.
 >3. Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin group Password: redhat, user 3 with root permissions
+
+#### add user1:
+```
+useradd -u 601 -s /etc/bashrc -p redhat user1
+```
+#### add groups :
+```
+groupadd TrainingGroup
+groupadd Admin
+```
+#### add user2 and 3:
+```
+useradd -p redhat -G Admin,TrainingGroup user2
+useradd -p redhat -G Admin,TrainingGroup user3
+```
+![add res](https://github.com/haithamhamad/Task1/blob/f56a62b65687d5669c9dec03970a683aa30e7b1d/add%20result.png)
+#### Give user3 root permissions:
+```
+visudo
+```
+>user3 ALL=(ALL) ALL (add this line)
+![u3 permission](https://github.com/haithamhamad/Task1/blob/86c76d321cd39fe5652bc8cf94be719118544d8c/user3%20permission.png)
+
