@@ -83,3 +83,15 @@ visudo
 
 ![u3 permission](https://github.com/haithamhamad/Task1/blob/86c76d321cd39fe5652bc8cf94be719118544d8c/user3%20permission.png)
 
+## Question 3: SSH
+>Generate SSH key and connect to different VM without password.
+#### genrate public and private key:
+```
+ ssh-keygen -t rsa
+```
+>saved to /home/osboxes/.ssh/id_rsa
+
+#### send the public key to the other machine:
+```
+ssh-copy-id -i id_rsa.pub (root@whatever is the other machine)
+```
