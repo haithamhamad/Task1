@@ -28,7 +28,7 @@ vgcreate -s 16M vg03 /dev/sdb1
 ```
 lvcreate -L 800M -n lv vg03
 ```
-![vg and lv](/create vg and LV.png)
+![vg and lv](https://github.com/haithamhamad/Task1/blob/ac5a12d2939502da4bd55524d32b5fe33ed51aea/create%20vg%20and%20LV.png)
 
 
 #### make a file system and mount it:
