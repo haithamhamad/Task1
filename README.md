@@ -59,6 +59,11 @@ vi /ets/fstab
 ```
 useradd -u 601 -s /etc/bashrc -p redhat user1
 ```
+#### deny SSH access for user1:
+```
+vi /etc/ssh/ssh_config
+```
+>DenyUsers user1
 #### add groups :
 ```
 groupadd TrainingGroup
