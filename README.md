@@ -2,7 +2,9 @@
 
 
 ## Question 1: LVM
-
+>Create a volume group, and set 16M as extends. And divided a volume group containing 50 extends on
+volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data. Please
+note that this should be implemented on the second disk
 #### scan everything in scsi:
 ```
 echo "- - -" > /sys/class/scsi_host/host0/scan
@@ -48,4 +50,4 @@ vi /ets/fstab
 ### final result
 ![res](https://github.com/haithamhamad/Task1/blob/8211452cb273cf38066759d8c178af476a30a702/result%20lvm.png)
 
-
+## Question 2:
