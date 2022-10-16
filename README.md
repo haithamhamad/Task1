@@ -15,7 +15,7 @@ fdisk /dev/sdb
 ```
 choose 'n' for create ,then 'p' for primary partition ,choose '1' for the partition number
 press 't' to select the first partition , '8e' the code for LV , then 'p' , the 'w' to save
-[create partition](	/assets/images/create-partition.png)
+![create partition](	/assets/images/create-partition.png)
 #### create a physical volume:
 ```
 pvcreate /dev/sdb1
