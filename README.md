@@ -117,6 +117,19 @@ vi /etc/selinux/config
 ```
 >SELINUX=enforcing
 
+## Question 6:  bash script and processes
+>Write a shell script that will keep running for 10 mins in the background and check the process that it's
+created and try to kill using commands.
+```
+#!/bin/bash
+
+PID=$!
+
+sleep 600 && kill -9 $PID 2>/dev/null
+
+```
+
+
 ## Question 8: Network management
 >1- Open port 443 , 80
 >2- Make the changes permanent
