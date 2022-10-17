@@ -146,6 +146,26 @@ vi /etc/hosts.deny
 >sshd : IP(ex : 192.168.2.5)
 
 ## Question 9: cronjob
+>Create a cronjob that will run at 1:30 AM every day and collect the users logged in and save them in a file
+Format : timestamp – users
+```
+crontab -e
+```
+```
+30 1 * * * /usr/bin/logged.bash
+```
+
+```
+#!/bin/bash
+
+
+date | tr -d '\n' >> /home/userslogged
+echo "  - -  " | tr -d '\n' >> /home/userslogged
+users >> /home/userslogged
+
+echo "-------------------" >> /home/userslogged
+```
+
 
 
 
