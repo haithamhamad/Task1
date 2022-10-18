@@ -128,7 +128,44 @@ PID=$!
 sleep 600 && kill -9 $PID 2>/dev/null
 
 ```
-
+## Question 7: Yum Repo
+>Install tmux on your machine
+```
+yum install tmux
+```
+>Install apache server on your machine(httpd) and Install mysql
+```
+yum install httpd
+systemctl start httpd
+systemctl enable httpd
+systemctl status httpd
+sudo wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+sudo md5sum mysql80-community-release-el7-3.noarch.rpm
+sudo yum install mysql-server
+```
+>Create a local yum repository on your local machine(available publicly) with the zabbix rpms
+```
+yum install createrepo yum-utils
+yum-config-manager --add-repo https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/
+mkdir /var/www/html/
+yum reposync -p=/var/www/html --repoid=repo.zabbix.com_zabbix_4.4_rhel_7_x86_64_ --download-metadata
+createrepo /var/www/html/repo.zabbix.com_zabbix_4.4_rhel_7_x86_64_
+```
+```
+nano /etc/yum.repos.d/local.repo
+```
+```
+[local-extras]
+name=Yum Local Extras
+baseurl=http://192.168.122.1:80/repo.zabbix.com_zabbix_4.4_rhel_7_x86_64_
+enabled=1
+gpgcheck=0
+```
+>disable all repos and only enable the local one
+```
+yum-config-manager --disable \*
+yum-config-manager --enable local-extras
+```
 
 ## Question 8: Network management
 >1- Open port 443 , 80
