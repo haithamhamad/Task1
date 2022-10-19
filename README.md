@@ -226,6 +226,22 @@ users >> /home/userslogged
 
 echo "-------------------" >> /home/userslogged
 ```
+## Question 10: Mariadb
+>install mariadb
+```
+ yum install wget
+ wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+ chmod +x mariadb_repo_setup
+ sudo ./mariadb_repo_setup
+ 
+ yum install MariaDB-server
+```
+
+
+
+
+
+
 
 
 
