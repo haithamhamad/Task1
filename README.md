@@ -166,6 +166,30 @@ gpgcheck=0
 yum-config-manager --disable \*
 yum-config-manager --enable local-extras
 ```
+>Install zabbix rpms from the new repo
+```
+yum insatll zabbix-server
+yum insatll zabbix-agent
+yum insatll zabbix-web
+```
+>to install PHP
+```
+yum install --downloadonly --downloaddir=/var/www/html/repo.zabbix.com_zabbix_4.4_rhel_7_x86_64_ epel-release –y
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm	
+reposync -p=/var/www/html/repo.zabbix.com_zabbix_4.4_rhel_7_x86_64_ --repoid=remi-safe --download-metadata
+createrepo /var/www/html/repo.zabbix.com_zabbix_4.4_rhel_7_x86_64
+yum insatll php
+```
+
+
+
+
+
+
+
+
+
+
 
 ## Question 8: Network management
 >1- Open port 443 , 80
