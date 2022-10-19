@@ -247,7 +247,7 @@ mysql -u user -p studentdb
 > CREATE TABLE studentdb ( firstname VARCHAR(20) NOT NULL, lastname VARCHAR(20) NOT NULL, program VARCHAR(10) NOT NULL, exp_grad YEAR NOT NULL, student_num VARCHAR(20) NOT NULL);
 > INSERT INTO   studentdb (firstname,lastname,program,exp_grad,student_num)VALUES ('David','Brown','mechanical','2017','110-002'),('Mary','Green','mechanical','2018','110-003'),('Dennis','Green','electrical','2018','110-004'),('Joseph','Black','electrical','2018','110-005'),('Dennis','Black','electrical','2020','110-006'),('Ritchie','Salt','computer','2020','110-007'),('Robert','Salt','computer','2020','110-008'),('David','Suzuki','computer','2020','110-009'),('Mary','Chen','computer','2020','110-010');
 ```
-
+![table](https://github.com/haithamhamad/Task1/blob/d6405097b79b9f122fd267a5dd137707fb22548a/Screenshot%20(21).png)
 
 
 
