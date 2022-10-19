@@ -240,6 +240,23 @@ echo "-------------------" >> /home/userslogged
 ```
 iptables -A INPUT -p tcp -m tcp --dport 3306 -j ACCEPT
 ```
+>create database , user
+```
+mysql -u root
+> CREATE USER 'user'@localhost IDENTIFIED BY '123456Hh@';
+>GRANT ALL PRIVILEGES ON *.* TO 'user'@localhost IDENTIFIED BY '123456Hh@';
+>FLUSH PRIVILEGES;
+>CREATE DATABASE studentdb;
+```
+>connect to the database created in step 3 using the new user (with password)
+```
+mysql -u user -p studentdb
+```
+
+
+
+
+
 
 
 
