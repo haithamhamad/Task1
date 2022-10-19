@@ -181,16 +181,6 @@ createrepo /var/www/html/repo.zabbix.com_zabbix_4.4_rhel_7_x86_64
 yum insatll php
 ```
 
-
-
-
-
-
-
-
-
-
-
 ## Question 8: Network management
 >1- Open port 443 , 80
 >2- Make the changes permanent
@@ -251,6 +241,11 @@ mysql -u root
 >connect to the database created in step 3 using the new user (with password)
 ```
 mysql -u user -p studentdb
+```
+>Create a MariaDB database called studentdb on rhce1 and add ten records
+```
+> CREATE TABLE studentdb ( firstname VARCHAR(20) NOT NULL, lastname VARCHAR(20) NOT NULL, program VARCHAR(10) NOT NULL, exp_grad YEAR NOT NULL, student_num VARCHAR(20) NOT NULL);
+> INSERT INTO   studentdb (firstname,lastname,program,exp_grad,student_num)VALUES ('David','Brown','mechanical','2017','110-002'),('Mary','Green','mechanical','2018','110-003'),('Dennis','Green','electrical','2018','110-004'),('Joseph','Black','electrical','2018','110-005'),('Dennis','Black','electrical','2020','110-006'),('Ritchie','Salt','computer','2020','110-007'),('Robert','Salt','computer','2020','110-008'),('David','Suzuki','computer','2020','110-009'),('Mary','Chen','computer','2020','110-010');
 ```
 
 
