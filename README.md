@@ -236,8 +236,10 @@ echo "-------------------" >> /home/userslogged
  
  yum install MariaDB-server
 ```
-
-
+>open ports in iptables from mariadb.
+```
+iptables -A INPUT -p tcp -m tcp --dport 3306 -j ACCEPT
+```
 
 
 
