@@ -28,7 +28,7 @@ vgcreate -s 16M vg03 /dev/sdb1
 ```
 #### create Logical volume :
 ```
-lvcreate -L 800M -n lv vg03
+lvcreate -l 50 -n lv vg03
 ```
 ![vg and lv](https://github.com/haithamhamad/Task1/blob/ac5a12d2939502da4bd55524d32b5fe33ed51aea/create%20vg%20and%20LV.png)
 
@@ -80,6 +80,10 @@ useradd -p redhat -G Admin,TrainingGroup user3
 visudo
 ```
 >user3 ALL=(ALL) ALL
+OR
+```
+usermod -g wheel user3
+```
 
 ![u3 permission](https://github.com/haithamhamad/Task1/blob/86c76d321cd39fe5652bc8cf94be719118544d8c/user3%20permission.png)
 
@@ -102,13 +106,11 @@ any permission
 ```
 cp /etc/fstab /var/tmp/admin
 ```
-#### change owner to user1:
-```
-chown user1 /var/tmp/admin
-```
 #### change permissions:
 ```
-chmod 700 /var/tmp/admin
+setfacl -m u:user1:rwx /var/tmp/admin
+setfacl -m u:user2:--- /var/tmp/admin
+
 ```
 ## Question 5: SELinux
 >SELinux must be running in the Enforcing mode (permanent even after reboot)
@@ -190,6 +192,13 @@ yum insatll php
 ```
 firewall-cmd --add-port={443/tcp,80/tcp} --permanent
 ```
+OR
+```
+vim /etc/rc.local
+iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+```
+
 #### deny an IP:
 ```
 vi /etc/hosts.deny
