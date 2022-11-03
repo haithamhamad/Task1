@@ -120,9 +120,12 @@ created and try to kill using commands.
 ```
 #!/bin/bash
 
-PID=$!
+PID=$(ps -aux | sed -n '/sudo .\/tt.bash/p'| awk 'END{ print $2}')
 
-sleep 600 && kill -9 $PID 2>/dev/null
+sleep 600 && kill -9 $PID 1> /dev/null
+
+echo im not here
+
 
 ```
 ## Question 7: Yum Repo
@@ -237,7 +240,7 @@ iptables -A INPUT -p tcp -m tcp --dport 3306 -j ACCEPT
 >create database , user
 ```
 mysql -u root
-> CREATE USER 'user'@localhost IDENTIFIED BY '123456Hh@';
+> CREATE USER 'user'@192.168.122.1 IDENTIFIED BY '123456Hh@';
 >GRANT ALL PRIVILEGES ON *.* TO 'user'@localhost IDENTIFIED BY '123456Hh@';
 >FLUSH PRIVILEGES;
 >CREATE DATABASE studentdb;
